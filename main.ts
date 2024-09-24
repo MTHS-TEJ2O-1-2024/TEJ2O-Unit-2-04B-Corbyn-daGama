@@ -6,18 +6,20 @@
 */
 
 
-
+// our variable for the temperature
+let currentTemperature = input.temperature()
+let currentTemperatureKelvin: number 
 
 basic.clearScreen()
-basic.pause(1000)
 basic.showIcon(IconNames.Happy)
+basic.pause(1000)
+basic.clearScreen()
+
 
 
 input.onButtonPressed(Button.A, function () {
-// our variable for the temperature
-let currentTemperature = input.temperature()
-basic.showString("The temperature is")
-basic.showNumber(currentTemperature)
-basic.showString("C.")
-basic.showIcon(IconNames.Happy)
-})
+
+currentTemperatureKelvin = (currentTemperature + 273.15)
+currentTemperatureKelvin = Math.round(currentTemperatureKelvin)
+basic.showString('the temperature is : ' + currentTemperatureKelvin.toString() +'K')})
+basic.clearScreen()
